@@ -60,7 +60,9 @@ public class Record {
     }
     private void sortTempRecord() {
         ArrayList<Exercise> sorted = new ArrayList<>();
-        sorted.add(0, tempRecord.get(0));
+        if (tempRecord.size() != 0) {
+            sorted.add(0, tempRecord.get(0));
+        }
         int check;
         for (int sortPoint = 1; sortPoint < tempRecord.size(); sortPoint++){
             check = sortPoint-1;
