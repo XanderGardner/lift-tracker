@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TrackPack.ControllerViewRoutines">
+    <top>
+        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRecord" text="Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRoutines" text="Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditAddEntry" text="Add Entry" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRecord" text="Edit Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutineNames" text="Edit Routine Names" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutines" text="Edit Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Graph">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphTimeline" text="Total Timeline" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphRoutine" text="Routine vs Time" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphExercise" text="Exercise vs Time" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+   <center>
+      <TableView fx:id="routineView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="routineC" prefWidth="150.0" text="Routine Name" />
+          <TableColumn fx:id="exerciseC" prefWidth="440.0" text="Exercises" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TrackPack.ControllerGraphExercise">
+    <top>
+        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRecord" text="Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRoutines" text="Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditAddEntry" text="Add Entry" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRecord" text="Edit Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutineNames" text="Edit Routine Names" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutines" text="Edit Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Graph">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphTimeline" text="Total Timeline" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphRoutine" text="Routine vs Time" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphExercise" text="Exercise vs Time" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <LineChart fx:id="timeline" BorderPane.alignment="CENTER">
+            <xAxis>
+                <NumberAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </LineChart>
+    </center>
+    <bottom>
+        <HBox alignment="TOP_CENTER" prefHeight="25.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+            <ComboBox fx:id="routineChoice" onAction="#routineSelected" prefWidth="150.0">
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </ComboBox>
+                <ChoiceBox fx:id="exerciseChoice" prefWidth="150.0">
+                    <HBox.margin>
+                        <Insets right="5.0" />
+                    </HBox.margin>
+                </ChoiceBox>
+                <Button mnemonicParsing="false" onAction="#addBClicked" text="Add">
+                    <HBox.margin>
+                        <Insets right="5.0" />
+                    </HBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#clearBClicked" text="Clear All">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+</BorderPane>

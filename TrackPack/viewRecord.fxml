@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TrackPack.ControllerViewRecord">
+    <top>
+        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRecord" text="Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRoutines" text="Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditAddEntry" text="Add Entry" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRecord" text="Edit Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutineNames" text="Edit Routine Names" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutines" text="Edit Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Graph">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphTimeline" text="Total Timeline" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphRoutine" text="Routine vs Time" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphExercise" text="Exercise vs Time" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="309.0" prefWidth="600.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <TableView fx:id="recordView" maxHeight="1.7976931348623157E308" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="dateCVR" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="exerciseCVR" prefWidth="120.0" sortable="false" text="Exercise" />
+                        <TableColumn fx:id="weightCVR" prefWidth="100.0" sortable="false" text="Weight" />
+                        <TableColumn fx:id="repsCVR" sortable="false" text="Reps" />
+                        <TableColumn fx:id="setsCVR" sortable="false" text="Sets" />
+                        <TableColumn fx:id="totalLiftedCVR" prefWidth="100.0" text="Total Lifted" />
+                    </columns>
+                </TableView>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

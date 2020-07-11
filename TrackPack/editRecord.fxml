@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TrackPack.ControllerEditRecord">
+    <top>
+        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRecord" text="Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRoutines" text="Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditAddEntry" text="Add Entry" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRecord" text="Edit Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutineNames" text="Edit Routine Names" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutines" text="Edit Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Graph">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphTimeline" text="Total Timeline" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphRoutine" text="Routine vs Time" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphExercise" text="Exercise vs Time" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="309.0" prefWidth="600.0" BorderPane.alignment="TOP_CENTER">
+            <children>
+                <TableView fx:id="recordEditView" maxHeight="1.7976931348623157E308" prefHeight="270.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="dateCER" prefWidth="75.0" text="Date" />
+                        <TableColumn fx:id="exerciseCER" prefWidth="120.0" sortable="false" text="Exercise" />
+                        <TableColumn fx:id="weightCER" prefWidth="100.0" sortable="false" text="Weight" />
+                        <TableColumn fx:id="repsCER" sortable="false" text="Reps" />
+                        <TableColumn fx:id="setsCER" sortable="false" text="Sets" />
+                        <TableColumn fx:id="totalLiftedCER" prefWidth="100.0" text="Total Lifted" />
+                    </columns>
+                </TableView>
+            <HBox alignment="TOP_CENTER" prefHeight="35.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="extractBER" mnemonicParsing="false" onAction="#extractBERClicked" text="Extract">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="deleteBER" mnemonicParsing="false" onAction="#deleteBERClicked" text="Delete">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="21.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="dateTER" prefWidth="75.0" />
+                  <TextField fx:id="exerciseTER" prefWidth="120.0" />
+                  <TextField fx:id="weightTER" prefWidth="100.0" />
+                  <TextField fx:id="repsTER" prefWidth="80.0" />
+                  <TextField fx:id="setsTER" prefWidth="80.0" />
+                  <Button fx:id="insertBER" mnemonicParsing="false" onAction="#insertBERClicked" text="Insert">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="16.0" prefWidth="600.0">
+               <children>
+                  <Button fx:id="saveBER" defaultButton="true" mnemonicParsing="false" onAction="#saveRecBERClicked" text="Save Record">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="210.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Label fx:id="saveText" prefHeight="26.0" prefWidth="200.0" textFill="RED">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

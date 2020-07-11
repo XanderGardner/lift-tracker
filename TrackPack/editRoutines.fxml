@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TrackPack.ControllerEditRoutines">
+    <top>
+        <MenuBar fx:id="menuBar" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="View">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRecord" text="Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneViewRoutines" text="Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditAddEntry" text="Add Entry" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRecord" text="Edit Record" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutineNames" text="Edit Routine Names" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneEditRoutines" text="Edit Routines" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Graph">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphTimeline" text="Total Timeline" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphRoutine" text="Routine vs Time" />
+                        <MenuItem mnemonicParsing="false" onAction="#setSceneGraphExercise" text="Exercise vs Time" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+            <ComboBox fx:id="workoutDrop" onAction="#dropSelected" prefWidth="150.0">
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+               </VBox.margin>
+            </ComboBox>
+                <TableView fx:id="exerciseView" prefHeight="250.0" prefWidth="600.0">
+                    <columns>
+                        <TableColumn fx:id="exerciseColumn" prefWidth="590.0" text="Exercises" />
+                    </columns>
+                </TableView>
+                <Button mnemonicParsing="false" onAction="#deleteBClicked" text="Delete">
+                    <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </VBox.margin>
+                </Button>
+                <HBox alignment="TOP_CENTER" prefHeight="25.0" prefWidth="600.0">
+                    <children>
+                        <TextField fx:id="exerciseInput" prefHeight="25.0" prefWidth="127.0" promptText="Exercise">
+                            <HBox.margin>
+                                <Insets left="3.0" right="3.0" />
+                            </HBox.margin>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#addBClicked" text="Add">
+                            <HBox.margin>
+                                <Insets left="3.0" right="3.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                    </VBox.margin>
+                </HBox>
+            <HBox alignment="TOP_CENTER" prefHeight="21.0" prefWidth="600.0">
+               <children>
+                      <Button defaultButton="true" mnemonicParsing="false" onAction="#saveBClicked" text="Save">
+                     <HBox.margin>
+                        <Insets left="210.0" right="10.0" top="2.0" />
+                     </HBox.margin>
+                      </Button>
+                  <Label fx:id="saveText" prefHeight="26.0" prefWidth="200.0" textFill="RED">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
