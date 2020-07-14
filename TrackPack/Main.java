@@ -16,6 +16,7 @@ public class Main extends Application {
 
         primaryStage.setScene(startScene);
         primaryStage.setTitle("LiftTracker");
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
