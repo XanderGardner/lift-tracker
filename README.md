@@ -1,5 +1,12 @@
 # LiftTracker
-Run using JavaFX, LiftTracker is a Java GUI desktop application used to track gym workouts. Information is stored and can be graphed. Routines can be created for easy entries.
+
+Run using JavaFX, LiftTracker is a Java GUI desktop application used to track gym workouts. Information is stored in text files with full CRUD actions and can be graphed. Routines can be created for easy entries.
+
+
+
+https://user-images.githubusercontent.com/66753486/130652781-32a6a4f1-bb91-459f-a34e-55df121a7ae4.mp4
+
+
 
 Structure:
 	- All scenes (FXML Files) have a controller
